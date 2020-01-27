@@ -13,20 +13,21 @@ for index,column_header in enumerate(header_row):
     print(index,column_header)
 
 highs = []
+dates = []
 
 for row in csv_file:
     highs.append(int(row[5]))
+    dates.append(row[2])
 
-print(highs[:10]) #only print fist 9 not including 10
+fig = plt.figure()
 
-plt.plot(highs,color='red')
+plt.plot(dates,highs,color='red')
 plt.title("daily high temps, July 2018", fontsize=16)
-plt.xlabel("",fontsize=16)
-plt.ylabel("Temperature (F)", fontsize=16)
-plt.tick_params(axis='both',which="major",labelsize=16)
+plt.xlabel("",fontsize=12)
+plt.ylabel("Temperature (F)", fontsize=12)
+plt.tick_params(axis='both',which="major",labelsize=12)
+
+#The call to fig.autofmt_xdate() draws the date labels diagonally to prevent them form # orverlapping. 
+fig.autofmt_xdate()
 
 plt.show()
-
-
-#plt.plot([1,2,3,4,5],color='red')
-
