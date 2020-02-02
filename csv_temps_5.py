@@ -64,17 +64,17 @@ fig,(ax,ax1) = plt.subplots(2,1)
 
 ax.plot(dates_ak,highs_ak,color='red')
 ax.plot(dates_ak,lows_ak,color='blue')
-ax.fill_between(dates_ak,highs_ak,lows_ak,facecolor='blue',alpha=0.1)
+ax.fill_between(dates_ak,highs_ak,lows_ak,facecolor='blue',alpha=0.3)
 ax.set_title(title_ak)
 
 
 ax1.plot(dates_ca,highs_ca,color='red')
 ax1.plot(dates_ca,lows_ca,color='blue')
-ax1.fill_between(dates_ca,highs_ca,lows_ca,facecolor='blue',alpha=0.1)
+ax1.fill_between(dates_ca,highs_ca,lows_ca,facecolor='blue',alpha=0.3)
 ax1.set_title(title_ca)
 
 
-plt.suptitle("Temperature comparison between SITKA AIRPORT, AK US and DEATH VALLEY, CA US")
+plt.suptitle("Temperature comparison between " + title_ak + " and " + title_ca)
 fig.autofmt_xdate()
 
 plt.show()
